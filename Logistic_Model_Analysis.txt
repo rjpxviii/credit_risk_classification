@@ -1,0 +1,47 @@
+
+Analysis of a Logistic Model on Credit Risk
+
+Overview
+The objective of this analysis is to create and evaluate a logistic regression model to assess loan risk. The dataset comprises over 19,000 records, including the following features:
+- Loan Size
+- Interest Rate
+- Borrower Income
+- Debt-to-Income Ratio
+- Number of Accounts
+- Derogatory Marks
+- Total Debt
+- Loan Status (0: "OK," 1: "At Risk")
+
+To mitigate bias from features with larger numerical values, such as income, all explanatory variables were standardized using z-scores based on their respective means and standard deviations. Categorical variables, such as derogatory marks, were encoded as binary values (0: Yes, 1: No). The logistic regression model was then trained using these standardized features and tested against actual loan statuses to evaluate its predictive performance. This model has the potential to predict loan risk status based on the given account features, providing valuable insights into credit score.
+
+Results
+For Loan Status (0: No Risk):
+Precision: 1.00
+Recall: 0.99
+F1-Score: 1.00
+Support: 18,765
+
+For Loan Status (1: At Risk):
+Precision: 0.84
+Recall: 0.94
+F1-Score: 0.89
+Support: 619
+
+Overall Metrics:
+Accuracy: 99%
+Macro Average:
+Precision: 0.92
+Recall: 0.97
+F1-Score: 0.94
+Weighted Average:
+Precision: 0.99
+Recall: 0.99
+F1-Score: 0.99
+Total Observations: 19,384
+
+Summary
+The logistic regression model achieved a high overall accuracy of 99%, demonstrating its effectiveness in predicting loan statuses based on the provided features. Notably, the model performed exceptionally well for accounts classified as "No Risk" with an F1-score of 1.00. For "At Risk" accounts, while the precision was slightly lower at 84%, the recall was robust at 94%, indicating that the model reliably identifies accounts at risk.
+
+A potential limitation of the model is the imbalance in the dataset, with "No Risk" accounts significantly outnumbering "At Risk" accounts (18,765 vs. 619). This imbalance may affect the model's ability to predict "At Risk" statuses accurately. However, the high precision and recall values for this category suggest that the model remains effective despite this imbalance.
+
+Overall, this model provides reliable predictions and valuable insights into the factors that contribute to loan risk, making it a useful tool for assessing creditworthiness.
